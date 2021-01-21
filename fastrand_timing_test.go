@@ -1,4 +1,4 @@
-package fastrand
+package rand
 
 import (
 	"math/rand"

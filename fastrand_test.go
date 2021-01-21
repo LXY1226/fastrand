@@ -1,4 +1,4 @@
-package fastrand
+package rand
 
 import (
 	"testing"
@@ -12,6 +12,14 @@ func TestUint32(t *testing.T) {
 			t.Fatalf("number %v already exists", n)
 		}
 		m[n] = struct{}{}
+	}
+}
+
+func TestRead(t *testing.T) {
+	buf := make([]byte, 256)
+
+	for i := 0; i < 256; i++ {
+		Read(buf[:i])
 	}
 }
 
