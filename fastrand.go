@@ -68,7 +68,7 @@ func Read(p []byte) (int, error) {
 	uh.Len = bh.Len / 4
 	uh.Cap = uh.Cap / 4
 	r.uint32s(u32)
-	if n := uh.Len*4 - bh.Len; n != 0 {
+	if n := bh.Len - uh.Len*4; n != 0 {
 		uh.Data = bh.Data + uintptr(n)
 		u32[uh.Len-1] = r.Uint32()
 	}
